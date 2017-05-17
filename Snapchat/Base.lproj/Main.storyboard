@@ -49,6 +49,9 @@
                                 <rect key="frame" x="151" y="357" width="73" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMk-OP-g2g"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,6 +66,11 @@
                             <constraint firstItem="XgN-sI-OBO" firstAttribute="top" secondItem="h3m-hC-fjf" secondAttribute="bottom" constant="40" id="tgY-FZ-RoU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="XgN-sI-OBO" id="RX0-CV-Xw6"/>
+                        <outlet property="logoLabel" destination="h3m-hC-fjf" id="40C-6K-3vz"/>
+                        <outlet property="passwordTextField" destination="1s2-jE-rff" id="xqh-Sc-zce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
