@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>812949808837-s9oc3rtgiqmb4gbfhjc7rejc0q0i7ktm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.812949808837-s9oc3rtgiqmb4gbfhjc7rejc0q0i7ktm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDt51GR3LYtwh-aMZvjbUebwe8MADG7nfs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>812949808837</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.brandonApp.Snapchat</string>
+	<key>PROJECT_ID</key>
+	<string>snapchat-9a04f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>snapchat-9a04f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:812949808837:ios:a11a444e0a162dfd</string>
+	<key>DATABASE_URL</key>
+	<string>https://snapchat-9a04f.firebaseio.com</string>
+</dict>
+</plist>
