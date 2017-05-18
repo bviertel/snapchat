@@ -41,11 +41,37 @@ class SignInViewController: UIViewController {
                 
                 print("We have error: \(error)")
                 
+                // When refering to items in the class, use self.
+                
+                Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
+                    
+                    print("We tried to create a user")
+                    
+                    if error != nil {
+                        
+                        print("We have error: \(error)")
+                     
+                    // If everything checks out and able to sign in successfully
+                    // Also for segue, do 'show modaly' as to not allow back functionality
+                    } else {
+                        
+                        print("Created user successfully!")
+                        
+                        self.performSegue(withIdentifier: "signInSegue", sender: nil)
+                        
+                        
+                    }
+                    
+                })
+                
                 // Smooth login
                 
             } else {
                 
                 print("Signed in successfully!")
+                
+                self.performSegue(withIdentifier: "signInSegue", sender: nil)
+
             }
         }
         
