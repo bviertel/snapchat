@@ -91,7 +91,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 
                 // If no errors, THEN perform the segue
                 
-                self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
+                self.performSegue(withIdentifier: "selectUserSegue", sender: metadata?.downloadURL()!.absoluteString)
             
             }
         }
@@ -115,6 +115,14 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
  
+        let nextVC = segue.destination as! SelectUserViewController
+        
+        // ImageURL is from above in the nextTapped method
+        
+        nextVC.imageURL = sender as! String
+        
+        nextVC.desc = descTextField.text!
+        
 
     }
 }

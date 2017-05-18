@@ -17,6 +17,10 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var tableView: UITableView!
     
+    var imageURL : String = ""
+    
+    var desc : String = ""
+    
     var users : [User] = []
     
     
@@ -97,7 +101,15 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let user = users[indexPath.row]
         
-        let snap = ["From":user.email, "Description":"Hello", "ImageURL":"www.image/yea"]
+        // Creates dictionary for information regarding the User
+        
+        // Got data from previous VC. Retrieved it by creating vars in current VC and assigning them in the previous VC
+        
+        let snap = ["From":user.email, "Description":desc, "ImageURL":imageURL]
+        
+        // Assigns the Snap information to the database
+        // Note the childByAutoId!
+        // Also setValue as dictionary
         
         Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
         
