@@ -10,6 +10,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class SignInViewController: UIViewController {
     
@@ -22,7 +23,10 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+
+    
+    
     }
     
     // Log In
@@ -56,6 +60,9 @@ class SignInViewController: UIViewController {
                     } else {
                         
                         print("Created user successfully!")
+                        
+                        // Puts user in database and sets emails and UID. Don't need password as authentication already occured
+                        Database.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email)
                         
                         self.performSegue(withIdentifier: "signInSegue", sender: nil)
                         
