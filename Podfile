@@ -8,5 +8,10 @@ target 'Snapchat' do
   # Pods for Snapchat
 
 pod 'Firebase/Core'
+# Even though the site says the full word of Authentication, just use Auth!
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
+
 
 end
