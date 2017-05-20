@@ -13,6 +13,6 @@ class Snap {
     var imageURL = ""
     var desc = ""
     var from = ""
-    var to = ""
+    var key = ""
     
 }

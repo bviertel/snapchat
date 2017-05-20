@@ -19,10 +19,15 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
         
         // Note the .child(Auth... It's how we retrieve the User ID for each specific Snap
+        
+        // Snap Added (Child Added)
         
         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childAdded, with: { DataSnapshot in
             
@@ -49,6 +54,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             snap.imageURL = fireBaseResponse["ImageURL"] as! String
             snap.desc = fireBaseResponse["Description"] as! String
             snap.from = fireBaseResponse["From"] as! String
+            snap.key = DataSnapshot.key
             
             // Add Snap to Array
             
@@ -59,9 +65,45 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.tableView.reloadData()
         })
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        // Snaps Removed (Child Removed)
         
+        Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childRemoved, with: { DataSnapshot in
+            
+            print(DataSnapshot)
+            
+            // Utilizing the Snap class!
+            
+            // Create new Snap
+            
+            let snap = Snap()
+            
+            // Get response from FireBase of type NSDictionary
+            
+            let fireBaseResponse = DataSnapshot.value! as! NSDictionary
+            
+            // Set values of the Snap object to values in Fire Base
+            
+            // MAKE SURE THE RESPONSE KEYS ARE EXACT
+            // MAKE SURE THE RESPONSE KEYS ARE EXACT
+            // MAKE SURE THE RESPONSE KEYS ARE EXACT
+            // MAKE SURE THE RESPONSE KEYS ARE EXACT
+            // MAKE SURE THE RESPONSE KEYS ARE EXACT
+            
+            snap.imageURL = fireBaseResponse["ImageURL"] as! String
+            snap.desc = fireBaseResponse["Description"] as! String
+            snap.from = fireBaseResponse["From"] as! String
+            snap.key = DataSnapshot.key
+            
+            // Add Snap to Array
+            
+            self.snaps.append(snap)
+            
+            // Reload Data!
+            
+            self.tableView.reloadData()
+        })
+
+
         
     }
     
