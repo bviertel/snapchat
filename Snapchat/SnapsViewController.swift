@@ -54,6 +54,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             snap.imageURL = fireBaseResponse["ImageURL"] as! String
             snap.desc = fireBaseResponse["Description"] as! String
             snap.from = fireBaseResponse["From"] as! String
+            snap.uuid = fireBaseResponse["UUID"] as! String
             snap.key = DataSnapshot.key
             
             // Add Snap to Array
@@ -73,55 +74,64 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             // Utilizing the Snap class!
             
-            // Create new Snap
+            var index = 0
             
-            let snap = Snap()
-            
-            // Get response from FireBase of type NSDictionary
-            
-            let fireBaseResponse = DataSnapshot.value! as! NSDictionary
-            
-            // Set values of the Snap object to values in Fire Base
-            
-            // MAKE SURE THE RESPONSE KEYS ARE EXACT
-            // MAKE SURE THE RESPONSE KEYS ARE EXACT
-            // MAKE SURE THE RESPONSE KEYS ARE EXACT
-            // MAKE SURE THE RESPONSE KEYS ARE EXACT
-            // MAKE SURE THE RESPONSE KEYS ARE EXACT
-            
-            snap.imageURL = fireBaseResponse["ImageURL"] as! String
-            snap.desc = fireBaseResponse["Description"] as! String
-            snap.from = fireBaseResponse["From"] as! String
-            snap.key = DataSnapshot.key
-            
-            // Add Snap to Array
-            
-            self.snaps.append(snap)
-            
-            // Reload Data!
+            for snap in self.snaps {
+                
+                if snap.key == DataSnapshot.key {
+                    
+                    self.snaps.remove(at: index)
+                    
+                }
+                
+                index += 1
+                
+            }
             
             self.tableView.reloadData()
         })
-
-
+        
+        
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return snaps.count
+        // If no snaps in list
+        
+        if snaps.count == 0 {
+            
+            return 1
+            
+        } else {
+            
+            return snaps.count
+            
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
-        
-        let snap = snaps[indexPath.row]
-        
-        cell.textLabel?.text = snap.from
-        
-        return cell
+        if snaps.count == 0 {
+            
+            let cell = UITableViewCell()
+            
+            cell.textLabel?.text = "Sorry, you have no snaps... :("
+            
+            return cell
+            
+        } else {
+            
+            let cell = UITableViewCell()
+            
+            let snap = snaps[indexPath.row]
+            
+            cell.textLabel?.text = snap.from
+            
+            return cell
+            
+        }
         
     }
     
@@ -144,7 +154,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             nextVC.snap = sender as! Snap
             
-        } 
+        }
         
     }
     

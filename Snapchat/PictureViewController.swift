@@ -25,14 +25,18 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var imagePicker = UIImagePickerController()
     
+    var uuid = NSUUID().uuidString
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
         imagePicker.delegate = self
         
+        // Disables button so user cannot select if no picture has been selected
         
-        // Do any additional setup after loading the view.
+        self.nextButton.isEnabled = false
+       
     }
     
     // We need the following code for any image, whether it be from the photo library or directly from the camera!
@@ -48,6 +52,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         imageView.backgroundColor = UIColor.clear
         
         imagePicker.dismiss(animated: true, completion: nil)
+        
+        self.nextButton.isEnabled = true
         
         
     }
@@ -73,7 +79,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // Creates the file with a NSUUID (Unique ID) converted to String and puts it in the images folder in Firebase
         
-        imagesFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil) { (metadata, error) in
+        imagesFolder.child("\(uuid).jpg").putData(imageData, metadata: nil) { (metadata, error) in
             
             print("Upload Attempted")
             
@@ -123,6 +129,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         nextVC.imageURL = sender as! String
         
         nextVC.desc = descTextField.text!
+        
+        nextVC.uuid = uuid
         
 
     }

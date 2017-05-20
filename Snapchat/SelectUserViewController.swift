@@ -21,6 +21,8 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var desc : String = ""
     
+    var uuid : String = ""
+    
     var users : [User] = []
     
     
@@ -107,7 +109,7 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Note the current user in from!
         
-        let snap = ["From":Auth.auth().currentUser!.email, "Description":desc, "ImageURL":imageURL]
+        let snap = ["From":Auth.auth().currentUser!.email, "Description":desc, "ImageURL":imageURL, "UUID":uuid]
         
         // Assigns the Snap information to the database
         // Note the childByAutoId!
