@@ -1,5 +1,5 @@
 //
-//  user.swift
+//  Snap.swift
 //  Snapchat
 //
 //  Created by Ann Marie Seyerlein on 5/18/17.
@@ -8,9 +8,11 @@
 
 import Foundation
 
-class User {
+class Snap {
     
-    var email = ""
-    var uid = ""
+    var imageURL = ""
+    var desc = ""
+    var from = ""
+    var to = ""
     
 }

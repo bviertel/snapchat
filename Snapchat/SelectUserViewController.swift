@@ -105,7 +105,9 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Got data from previous VC. Retrieved it by creating vars in current VC and assigning them in the previous VC
         
-        let snap = ["From":user.email, "Description":desc, "ImageURL":imageURL]
+        // Note the current user in from!
+        
+        let snap = ["From":Auth.auth().currentUser!.email, "Description":desc, "ImageURL":imageURL]
         
         // Assigns the Snap information to the database
         // Note the childByAutoId!
@@ -113,9 +115,7 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
         
-    
-        
+        navigationController!.popToRootViewController(animated: true)
     }
-
 
 }
