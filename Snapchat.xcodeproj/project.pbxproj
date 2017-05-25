@@ -13,6 +13,7 @@
 		2842FE7F1ECCEF5C00562D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2842FE7D1ECCEF5C00562D83 /* Main.storyboard */; };
 		2842FE811ECCEF5C00562D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2842FE801ECCEF5C00562D83 /* Assets.xcassets */; };
 		2842FE841ECCEF5C00562D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2842FE821ECCEF5C00562D83 /* LaunchScreen.storyboard */; };
+		288094901ED7647C00055CD0 /* MainPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880948F1ED7647C00055CD0 /* MainPopUpViewController.swift */; };
 		28E53A6E1ECE631700C2BEBE /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E53A6D1ECE631700C2BEBE /* Snap.swift */; };
 		28E53A701ECE6BBD00C2BEBE /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E53A6F1ECE6BBD00C2BEBE /* ViewSnapViewController.swift */; };
 		28E64ED71ED07782004B6F83 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E64ED61ED07782004B6F83 /* CreateUserViewController.swift */; };
@@ -32,6 +33,7 @@
 		2842FE801ECCEF5C00562D83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2842FE831ECCEF5C00562D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2842FE851ECCEF5C00562D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2880948F1ED7647C00055CD0 /* MainPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPopUpViewController.swift; sourceTree = "<group>"; };
 		28E53A6D1ECE631700C2BEBE /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		28E53A6F1ECE6BBD00C2BEBE /* ViewSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		28E64ED61ED07782004B6F83 /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				28F8571F1ECDC99D00CDCE1C /* SelectUserViewController.swift */,
 				28E53A6F1ECE6BBD00C2BEBE /* ViewSnapViewController.swift */,
 				28E64ED61ED07782004B6F83 /* CreateUserViewController.swift */,
+				2880948F1ED7647C00055CD0 /* MainPopUpViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288094901ED7647C00055CD0 /* MainPopUpViewController.swift in Sources */,
 				28E53A6E1ECE631700C2BEBE /* Snap.swift in Sources */,
 				2842FE7C1ECCEF5C00562D83 /* SignInViewController.swift in Sources */,
 				28F8571E1ECD23E000CDCE1C /* PictureViewController.swift in Sources */,

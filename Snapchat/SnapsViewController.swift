@@ -25,6 +25,10 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         
+        // Popover code
+        
+        showPopUp()
+        
         // Note the .child(Auth... It's how we retrieve the User ID for each specific Snap
         
         // Snap Added (Child Added)
@@ -176,6 +180,29 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             nextVC.snap = sender as! Snap
             
         }
+        
+    }
+    
+    func showPopUp() {
+        
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainPopUpVC") as! MainPopUpViewController
+        
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+        
+        self.view.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        
+        self.view.alpha = 0.0
+
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.view.alpha = 1.0
+            
+            self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            
+        })
         
     }
     

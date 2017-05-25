@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542" y="36"/>
+            <point key="canvasLocation" x="806" y="36"/>
         </scene>
         <!--Snaps View Controller-->
         <scene sceneID="OHB-7B-Q52">
@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8Z-pt-cNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-215"/>
+            <point key="canvasLocation" x="2172" y="36"/>
         </scene>
         <!--Select Image-->
         <scene sceneID="ZZM-DC-rJy">
@@ -332,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iko-dC-a7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-254" y="-985"/>
+            <point key="canvasLocation" x="806" y="-929"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oTZ-eC-6sW">
@@ -350,7 +350,61 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgc-wB-9Yo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-985"/>
+            <point key="canvasLocation" x="2172" y="-928"/>
+        </scene>
+        <!--Main Pop Up View Controller-->
+        <scene sceneID="qUp-hj-W7d">
+            <objects>
+                <viewController storyboardIdentifier="mainPopUpVC" id="5zZ-M6-fNS" customClass="MainPopUpViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="68P-gE-j53"/>
+                        <viewControllerLayoutGuide type="bottom" id="hNr-6J-8gl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p9K-H5-XMy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ht-th-IJ6">
+                                <rect key="frame" x="46" y="229" width="283" height="209"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fQ-yw-Hvj">
+                                        <rect key="frame" x="119" y="40" width="44" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnP-fp-sQg">
+                                        <rect key="frame" x="127" y="101" width="30" height="30"/>
+                                        <state key="normal" title="Ok!"/>
+                                        <connections>
+                                            <action selector="okButton:" destination="5zZ-M6-fNS" eventType="touchUpInside" id="Xri-zG-9s5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94088001943005184" green="0.0" blue="0.12093275805108272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2fQ-yw-Hvj" firstAttribute="top" secondItem="6ht-th-IJ6" secondAttribute="top" constant="40" id="F0M-uR-YUD"/>
+                                    <constraint firstItem="2fQ-yw-Hvj" firstAttribute="centerX" secondItem="6ht-th-IJ6" secondAttribute="centerX" id="Pe9-vR-ewJ"/>
+                                    <constraint firstItem="mnP-fp-sQg" firstAttribute="top" secondItem="2fQ-yw-Hvj" secondAttribute="bottom" constant="40" id="U9F-yY-2hw"/>
+                                    <constraint firstItem="mnP-fp-sQg" firstAttribute="centerX" secondItem="6ht-th-IJ6" secondAttribute="centerX" id="p5Z-Kf-SoF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6ht-th-IJ6" firstAttribute="centerY" secondItem="p9K-H5-XMy" secondAttribute="centerY" id="Ly6-tK-i4l"/>
+                            <constraint firstItem="6ht-th-IJ6" firstAttribute="centerX" secondItem="p9K-H5-XMy" secondAttribute="centerX" id="PIl-Pa-D8i"/>
+                            <constraint firstItem="6ht-th-IJ6" firstAttribute="top" secondItem="68P-gE-j53" secondAttribute="bottom" constant="209" id="gga-iH-e8K"/>
+                            <constraint firstItem="6ht-th-IJ6" firstAttribute="leading" secondItem="p9K-H5-XMy" secondAttribute="leadingMargin" constant="30" id="pnh-Y8-6zl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="2fQ-yw-Hvj" id="k7z-ol-Her"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zB9-Mk-IY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="941"/>
         </scene>
         <!--From:-->
         <scene sceneID="0QU-uk-8bY">
@@ -435,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kk7-xS-hFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821.60000000000002" y="626.53673163418296"/>
+            <point key="canvasLocation" x="2172" y="942"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
