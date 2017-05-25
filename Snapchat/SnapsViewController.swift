@@ -55,6 +55,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             snap.desc = fireBaseResponse["description"] as! String
             snap.fromEmail = fireBaseResponse["fromEmail"] as! String
             snap.fromUserName = fireBaseResponse["fromUserName"] as! String
+            snap.fromUserID = fireBaseResponse["fromUserID"] as! String
             snap.uuid = fireBaseResponse["uuid"] as! String
             snap.key = DataSnapshot.key
             

@@ -20,6 +20,10 @@ class ViewSnapViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationItem!
     
+    @IBOutlet weak var checkButton: UIButton!
+    
+    @IBOutlet weak var xButton: UIButton!
+    
     var snap = Snap()
     
     override func viewDidLoad() {
@@ -43,12 +47,65 @@ class ViewSnapViewController: UIViewController {
         
         Storage.storage().reference().child("images").child("\(snap.uuid).jpg").delete { (error) in
             
-            print("We deleted the pic!")
+            print("Delete Successful")
             
         }
         
         // print("Goodbye")
         
+    }
+    
+    @IBAction func xTapped(_ sender: Any) {
+        
+        Database.database().reference().child("users").child(snap.fromUserID).child("votes").observeSingleEvent(of: DataEventType.value, with: { DataSnapshot in
+            
+            print(DataSnapshot)
+            
+            let fBR = DataSnapshot.value! as? NSDictionary
+            
+            let dV = fBR!["down"] as! String
+            
+            var dVI : Int! = Int(dV)
+            
+            dVI = dVI + 1
+            
+            print(dVI)
+            
+            Database.database().reference().child("users").child(self.snap.fromUserID).child("votes").child("down").setValue("\(dVI!)")
+            
+            
+        }) { (Error) in
+            
+        }
+        
+        
+        // Database.database().reference().child("users").child(snap.fromUserID).child("upvotes").setValue(0)
+        
+    }
+    
+    @IBAction func checkTapped(_ sender: Any) {
+        
+        Database.database().reference().child("users").child(snap.fromUserID).child("votes").observeSingleEvent(of: DataEventType.value, with: { DataSnapshot in
+            
+            print(DataSnapshot)
+            
+            let fBR = DataSnapshot.value! as? NSDictionary
+            
+            let dV = fBR!["up"] as! String
+            
+            var dVI : Int! = Int(dV)
+            
+            dVI = dVI + 1
+            
+            print(dVI)
+            
+            Database.database().reference().child("users").child(self.snap.fromUserID).child("votes").child("up").setValue("\(dVI!)")
+            
+            
+        }) { (Error) in
+            
+        }
+
     }
 
 }

@@ -17,7 +17,7 @@ import FirebaseAuth
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView?
     
     @IBOutlet weak var descTextField: UITextField!
     
@@ -45,11 +45,11 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        imageView.image = image
+        imageView!.image = image
         
         // Because we have a gray background in our original ImageView to show that there IS a spot for a picture, we need to change it back to transparent so that we don't have any gray edges if the picture isn't the same size
         
-        imageView.backgroundColor = UIColor.clear
+        imageView!.backgroundColor = UIColor.clear
         
         imagePicker.dismiss(animated: true, completion: nil)
         
@@ -75,7 +75,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // Change to JPG instead
         
-        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
+        let imageData = UIImageJPEGRepresentation(imageView!.image!, 0.1)!
         
         // Creates the file with a NSUUID (Unique ID) converted to String and puts it in the images folder in Firebase
         

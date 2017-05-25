@@ -39,6 +39,10 @@ class CreateUserViewController: UIViewController {
                 print("Created user successfully!")
                 Database.database().reference().child("users").child(user!.uid).child("email").setValue(user?.email)
                 Database.database().reference().child("users").child(user!.uid).child("username").setValue(self.userNameTextField.text!)
+                Database.database().reference().child("users").child(user!.uid).child("votes").child("up").setValue("0")
+                Database.database().reference().child("users").child(user!.uid).child("votes").child("down").setValue("0")
+                
+                
                 
                 self.performSegue(withIdentifier: "createUserSignInSegue", sender: nil)
             

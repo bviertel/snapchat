@@ -109,7 +109,7 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Note the current user in from!
         
-        let snap = ["fromEmail":Auth.auth().currentUser!.email, "fromUserName":user.userName, "description":desc, "imageURL":imageURL, "uuid":uuid]
+        let snap = ["fromEmail":Auth.auth().currentUser!.email, "fromUserName":user.userName, "fromUserID":user.uid, "description":desc, "imageURL":imageURL, "uuid":uuid]
         
         // Assigns the Snap information to the database
         // Note the childByAutoId!

@@ -24,6 +24,8 @@ class Snap {
     
     var fromUserName = ""
     
+    var fromUserID = ""
+    
     // Main Unique Key where all data is stored
     
     var key = ""
