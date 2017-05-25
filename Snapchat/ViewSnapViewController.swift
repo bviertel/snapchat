@@ -77,10 +77,9 @@ class ViewSnapViewController: UIViewController {
         }) { (Error) in
             
         }
-        
-        
-        // Database.database().reference().child("users").child(snap.fromUserID).child("upvotes").setValue(0)
-        
+
+        navigationController!.popViewController(animated: true)
+
     }
     
     @IBAction func checkTapped(_ sender: Any) {
@@ -105,6 +104,8 @@ class ViewSnapViewController: UIViewController {
         }) { (Error) in
             
         }
+        
+        navigationController!.popViewController(animated: true)
 
     }
 

@@ -41,7 +41,23 @@ class SignInViewController: UIViewController {
             
             if error != nil {
                 
-                print("We have error: \(error)")
+                print("We have error: \(String(describing: error))")
+                
+                // IOS default alert system
+                
+                let alert = UIAlertController(title: "Error", message: "We can't seem to find your account...", preferredStyle: UIAlertControllerStyle.alert)
+                
+                alert.addAction(UIAlertAction(title: "Create Account", style: UIAlertActionStyle.default, handler: { ACTION in
+                    
+                    self.performSegue(withIdentifier: "createUserSegue", sender: nil)
+                    
+                    
+                    
+                }))
+                
+                alert.addAction(UIAlertAction(title: "Back", style: UIAlertActionStyle.default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
 
                 
                 // When refering to items in the class, use self.

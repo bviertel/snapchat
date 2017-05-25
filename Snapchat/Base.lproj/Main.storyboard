@@ -299,6 +299,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-uE-QdY">
+                                <rect key="frame" x="150.5" y="491" width="75" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="1kl-nb-48o" eventType="touchUpInside" id="RbW-8B-lrb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -307,9 +315,11 @@
                             <constraint firstItem="GM2-84-KyA" firstAttribute="centerX" secondItem="EOm-DY-0sc" secondAttribute="centerX" id="Ec6-pA-J1I"/>
                             <constraint firstItem="Hk7-Ks-1tP" firstAttribute="top" secondItem="GM2-84-KyA" secondAttribute="bottom" constant="40" id="QxQ-Q7-O2j"/>
                             <constraint firstItem="Ddr-xy-BtJ" firstAttribute="centerX" secondItem="jer-Da-HQE" secondAttribute="centerX" id="T7Y-5M-cih"/>
+                            <constraint firstItem="RtX-uE-QdY" firstAttribute="centerX" secondItem="jer-Da-HQE" secondAttribute="centerX" id="ceS-FW-Kno"/>
                             <constraint firstItem="Ddr-xy-BtJ" firstAttribute="centerX" secondItem="EOm-DY-0sc" secondAttribute="centerX" id="dga-DZ-DHt"/>
                             <constraint firstItem="TJ9-ms-v8y" firstAttribute="top" secondItem="2Ud-uE-Nxi" secondAttribute="bottom" constant="80" id="kQR-gu-uaY"/>
                             <constraint firstItem="Ddr-xy-BtJ" firstAttribute="top" secondItem="Hk7-Ks-1tP" secondAttribute="bottom" constant="40" id="oN2-Ru-crE"/>
+                            <constraint firstItem="RtX-uE-QdY" firstAttribute="top" secondItem="Ddr-xy-BtJ" secondAttribute="bottom" constant="40" id="rcM-Qr-M0H"/>
                             <constraint firstItem="Ddr-xy-BtJ" firstAttribute="centerX" secondItem="Hk7-Ks-1tP" secondAttribute="centerX" id="tOJ-ry-Gw6"/>
                             <constraint firstItem="GM2-84-KyA" firstAttribute="top" secondItem="EOm-DY-0sc" secondAttribute="bottom" constant="40" id="w50-S0-4cf"/>
                         </constraints>
@@ -322,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iko-dC-a7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498" y="-984"/>
+            <point key="canvasLocation" x="-254" y="-985"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oTZ-eC-6sW">

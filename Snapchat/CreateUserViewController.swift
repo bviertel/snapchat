@@ -18,6 +18,8 @@ class CreateUserViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -49,6 +51,13 @@ class CreateUserViewController: UIViewController {
             }
             
         })
+        
+    }
+    
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
         
     }
 
