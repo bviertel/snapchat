@@ -27,17 +27,16 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.tableView.dataSource = self
+        
         self.tableView.delegate = self
-        
-        
           
             // Populate Table View after Picture has been selected from the Picture View Controller
             // Observe allows us to get the data or look at it
             // NOTE THE FORMAT WITH OBSERVE!!!! BUG IN SYSTEM? WEIRD...
-        
         
         Database.database().reference().child("users").observe(DataEventType.childAdded, with: { DataSnapshot in
        
@@ -96,7 +95,6 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
         
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -114,10 +112,10 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         // Assigns the Snap information to the database
         // Note the childByAutoId!
         // Also setValue as dictionary
-        
         Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
         
         navigationController!.popToRootViewController(animated: true)
+        
     }
 
 }

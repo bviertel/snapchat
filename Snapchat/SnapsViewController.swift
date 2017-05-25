@@ -101,9 +101,13 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if snaps.count == 0 {
             
+            tableView.isUserInteractionEnabled = false
+            
             return 1
             
         } else {
+            
+            tableView.isUserInteractionEnabled = true
             
             return snaps.count
             
@@ -118,6 +122,8 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let cell = UITableViewCell()
             
             cell.textLabel?.text = "Sorry, you have no snaps... :("
+            
+            // tableView.isUserInteractionEnabled = false
             
             return cell
             
@@ -144,6 +150,20 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    // Logout is just dismissing the current view controller
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "logOutSegue", sender: nil)
+        
+        // navigationController!.popToViewController(SignInViewController, animated: true)
+        
+        // dismiss(animated: true, completion: nil)
+        
+        print("Logged out successfully!")
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Since there are multiple segues from the same VC, add IF statements, otherwise Thread 1:signal SIGABRT error will be thrown!
@@ -155,16 +175,6 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             nextVC.snap = sender as! Snap
             
         }
-        
-    }
-    
-    // Logout is just dismissing the current view controller
-    
-    @IBAction func logoutTapped(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
-        
-        print("Logged out successfully!")
         
     }
     

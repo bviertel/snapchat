@@ -10,10 +10,24 @@ import Foundation
 
 class Snap {
     
+    // URL to the location in FireBase
+    
     var imageURL = ""
+    
+    // Text Overlay on the picture
+    
     var desc = ""
+    
+    // Email of the sending user
+    
     var from = ""
+    
+    // Main Unique Key where all data is stored
+    
     var key = ""
+    
+    // Minor Unique Identifier
+    
     var uuid = ""
     
 }

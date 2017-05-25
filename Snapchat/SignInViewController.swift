@@ -24,8 +24,6 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-    
     
     }
     
@@ -44,10 +42,11 @@ class SignInViewController: UIViewController {
             if error != nil {
                 
                 print("We have error: \(error)")
+
                 
                 // When refering to items in the class, use self.
                 
-                Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
+                /*Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                     
                     print("We tried to create a user")
                     
@@ -69,7 +68,7 @@ class SignInViewController: UIViewController {
                         
                     }
                     
-                })
+                })*/
                 
                 // Smooth login
                 
@@ -85,5 +84,11 @@ class SignInViewController: UIViewController {
         
     }
     
+    @IBAction func signUpTapped(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "createUserSegue", sender: nil)
+        
+    }
+
 }
 

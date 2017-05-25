@@ -18,6 +18,8 @@ class ViewSnapViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var navBar: UINavigationItem!
+    
     var snap = Snap()
     
     override func viewDidLoad() {
@@ -29,6 +31,8 @@ class ViewSnapViewController: UIViewController {
         label.text = snap.desc
         
         imageView.sd_setImage(with: URL(string: snap.imageURL))
+        
+        navBar.title = "From: \(snap.from)"
         
     }
     
