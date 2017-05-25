@@ -20,7 +20,9 @@ class Snap {
     
     // Email of the sending user
     
-    var from = ""
+    var fromEmail = ""
+    
+    var fromUserName = ""
     
     // Main Unique Key where all data is stored
     

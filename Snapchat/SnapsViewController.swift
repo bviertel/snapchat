@@ -51,10 +51,11 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             // MAKE SURE THE RESPONSE KEYS ARE EXACT
             // MAKE SURE THE RESPONSE KEYS ARE EXACT
             
-            snap.imageURL = fireBaseResponse["ImageURL"] as! String
-            snap.desc = fireBaseResponse["Description"] as! String
-            snap.from = fireBaseResponse["From"] as! String
-            snap.uuid = fireBaseResponse["UUID"] as! String
+            snap.imageURL = fireBaseResponse["imageURL"] as! String
+            snap.desc = fireBaseResponse["description"] as! String
+            snap.fromEmail = fireBaseResponse["fromEmail"] as! String
+            snap.fromUserName = fireBaseResponse["fromUserName"] as! String
+            snap.uuid = fireBaseResponse["uuid"] as! String
             snap.key = DataSnapshot.key
             
             // Add Snap to Array
@@ -70,7 +71,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childRemoved, with: { DataSnapshot in
             
-            print(DataSnapshot)
+            // print(DataSnapshot)
             
             // Utilizing the Snap class!
             
@@ -89,6 +90,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             
             self.tableView.reloadData()
+            
         })
         
         
@@ -123,8 +125,6 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             cell.textLabel?.text = "Sorry, you have no snaps... :("
             
-            // tableView.isUserInteractionEnabled = false
-            
             return cell
             
         } else {
@@ -133,7 +133,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             let snap = snaps[indexPath.row]
             
-            cell.textLabel?.text = snap.from
+            cell.textLabel?.text = snap.fromUserName
             
             return cell
             

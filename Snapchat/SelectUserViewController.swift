@@ -40,7 +40,7 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         Database.database().reference().child("users").observe(DataEventType.childAdded, with: { DataSnapshot in
        
-            print(DataSnapshot)
+            // print(DataSnapshot) // <--- Uncomment for detailed info in command window
             
             // Gets the value specified from the dictionary key
             
@@ -58,6 +58,8 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
             // Set User Email to Email Value as String from the Fire Base Response
             
             user.email = fireBaseResponse["email"] as! String
+            
+            user.userName = fireBaseResponse["username"] as! String
 
             // Set User ID to the Key of the DataSnapShot, does NOT need to be from the Fire Base Response
             
@@ -91,7 +93,7 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Gets information from the User class that we made!
         
-        cell.textLabel?.text = user.email
+        cell.textLabel?.text = user.userName
         
         return cell
         
@@ -107,11 +109,12 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Note the current user in from!
         
-        let snap = ["From":Auth.auth().currentUser!.email, "Description":desc, "ImageURL":imageURL, "UUID":uuid]
+        let snap = ["fromEmail":Auth.auth().currentUser!.email, "fromUserName":user.userName, "description":desc, "imageURL":imageURL, "uuid":uuid]
         
         // Assigns the Snap information to the database
         // Note the childByAutoId!
         // Also setValue as dictionary
+        
         Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
         
         navigationController!.popToRootViewController(animated: true)

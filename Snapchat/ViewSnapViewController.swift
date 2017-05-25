@@ -32,7 +32,8 @@ class ViewSnapViewController: UIViewController {
         
         imageView.sd_setImage(with: URL(string: snap.imageURL))
         
-        navBar.title = "From: \(snap.from)"
+        navBar.title = "From: \(snap.fromUserName)"
+
         
     }
     
